@@ -30,6 +30,24 @@ Examples::
 def is_anagram_of_palindrome(word):
     """Is the word an anagram of a palindrome?"""
 
+    letters = {}
+
+    if len(word) == 1:
+        return True
+
+    for letter in word:
+        letters[letter] = letters.get(letter, 0) + 1
+
+    singles = False
+
+    for count in letters.values():
+        if count % 2 != 0:
+            if singles:
+                return False
+            singles = True
+
+    return True
+
 
 if __name__ == '__main__':
     import doctest
