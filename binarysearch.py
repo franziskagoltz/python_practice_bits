@@ -22,6 +22,7 @@ of 1-100, this should never be more than 7.
     7
 """
 
+
 def binary_search(val):
     """Using binary search, find val in range 1-100. Return # of guesses."""
 
@@ -29,7 +30,25 @@ def binary_search(val):
 
     num_guesses = 0
 
-    return num_guesses
+    high = 101
+    low = 0
+    guess = (low - high) / 2 + high
+
+    # print guess
+
+    while guess != val:
+        # print guess
+        num_guesses += 1
+
+        if guess < val:
+            low = guess
+
+        elif guess > val:
+            high = guess
+
+        guess = (low - high) / 2 + high
+
+    return num_guesses + 1
 
 
 if __name__ == '__main__':
