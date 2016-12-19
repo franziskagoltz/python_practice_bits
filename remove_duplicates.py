@@ -17,7 +17,14 @@ For example::
 def remove_duplicates(items):
     """Remove duplicates in the list items and return that list."""
 
-    return list(set(items))
+    no_duplicates = []
+
+    if items:
+        for item in items:
+            if item not in no_duplicates:
+                no_duplicates.append(item)
+
+    return no_duplicates
     
 
 if __name__ == '__main__':
