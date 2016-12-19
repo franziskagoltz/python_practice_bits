@@ -19,10 +19,13 @@ def remove_duplicates(items):
 
     no_duplicates = []
 
+    seen = set()
+
     if items:
         for item in items:
-            if item not in no_duplicates:
+            if item not in seen:
                 no_duplicates.append(item)
+                seen.add(item)
 
     return no_duplicates
     
