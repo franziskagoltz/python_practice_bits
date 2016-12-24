@@ -24,6 +24,13 @@ The sum of an empty list is zero::
 def sum_list(nums):
     """Using recursion, return the sum of numbers in a list."""
 
+    total = 0
+
+    if nums:
+        return nums[0] + sum_list(nums[1:])
+
+    return total
+
 
 if __name__ == '__main__':
     import doctest
