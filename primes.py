@@ -13,9 +13,29 @@ For example::
 
 """
 
+import math
+
 
 def primes(count):
     """Return count number of prime numbers, starting at 2."""
+
+    pass
+
+
+def is_prime(num):
+    """Checks if a number is prime or not"""
+
+    if num < 2:
+        return False
+
+    if num == 2:
+        return True
+
+    for x in range(2, int(math.sqrt(num))+1):
+        if num % x == 0:
+            return False
+
+    return True
 
 
 if __name__ == '__main__':
