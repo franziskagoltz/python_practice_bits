@@ -21,13 +21,20 @@ For example:
 """
 
 
-def recursive_index(needle, haystack):
+def recursive_index(needle, haystack, index=0):
     """Given list (haystack), return index (0-based) of needle in the list.
 
     Return None if needle is not in haystack.
 
     Do this with recursion. You MAY NOT USE A `for` OR `while` LOOP.
     """
+
+    if len(haystack) > 0:
+
+        if needle == haystack[0]:
+            return index
+
+        return recursive_index(needle, haystack[1:], index + 1)
 
 
 if __name__ == '__main__':
