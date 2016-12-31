@@ -19,7 +19,17 @@ import math
 def primes(count):
     """Return count number of prime numbers, starting at 2."""
 
-    pass
+    primes_list = []
+
+    num = 2
+
+    while len(primes_list) < count:
+        if is_prime(num):
+            primes_list.append(num)
+
+        num += 1
+
+    return primes_list
 
 
 def is_prime(num):
